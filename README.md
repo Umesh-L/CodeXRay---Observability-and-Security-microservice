@@ -1,236 +1,221 @@
-# CodeXray - Observability & Security Microservice
+# CodeXRay - Observability & Security Microservice <br/>
 
-<div align="center">
+**A comprehensive full-stack observability and security microservice that demonstrates efficient data structures, algorithms, secure coding practices, and real-time system monitoring.** <br/>
 
-![CodeXray Logo](https://img.shields.io/badge/CodeXray-Observability-blue?style=for-the-badge)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
-[![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express&logoColor=white)](https://expressjs.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<hr/> <br/>
 
-**A comprehensive full-stack observability and security microservice that demonstrates efficient data structures, algorithms, secure coding practices, and real-time system monitoring.**
+## 📋 Table of Contents <br/>
 
-[Features](#features) • [Installation](#installation) • [API Documentation](#api-documentation) • [Architecture](#architecture) • [Evaluation](#evaluation-scorecard)
+- [Overview](#overview) <br/>
+- [Project Evaluation](#evaluation) <br/>
+- [Features](#features) <br/>
+- [Tech Stack](#tech-stack) <br/>
+- [Installation & Setup](#installation--setup) <br/>
+- [Usage](#usage) <br/>
+- [API Documentation](#api-documentation) <br/>
+- [Data Structures & Algorithms](#data-structures--algorithms) <br/>
+- [Architecture](#architecture) <br/>
+- [Security Features](#security-features) <br/>
+- [Screenshots](#screenshots) <br/>
+- [Project Structure](#project-structure) <br/>
+- [Contributing](#contributing) <br/>
 
-</div>
+<hr/> <br/>
 
----
+## 🎯 Overview <br/>
 
-## 📋 Table of Contents
+CodeXRay is an enterprise-grade observability and security microservice built as part of the **CodeXray Intern Evaluation Project**. It provides real-time system monitoring, intelligent alerting, log analysis, and secure API access through a modern web dashboard. <br/>
 
-- [Overview](#overview)
-- [Project Evaluation](#evaluation)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation & Setup](#installation--setup)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Data Structures & Algorithms](#data-structures--algorithms)
-- [Architecture](#architecture)
-- [Security Features](#security-features)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
+### Key Highlights <br/>
 
----
+✅ **100% Assignment Completion** - All phases implemented plus bonus features <br/>
+🚀 **Production-Ready** - Clean architecture with TypeScript, React, and Express <br/>
+🔒 **Enterprise Security** - bcrypt hashing, session management, input validation <br/>
+📊 **Real-Time Monitoring** - Live CPU/Memory metrics with configurable alerts <br/>
+🎨 **Modern UI/UX** - Responsive dashboard with dark mode and data visualization <br/>
+⚡ **Optimized Performance** - Efficient DSA implementations with O(1) lookups <br/>
 
-## 🎯 Overview
+<hr/> <br/>
 
-CodeXray is an enterprise-grade observability and security microservice built as part of the **CodeXray Intern Evaluation Project**. It provides real-time system monitoring, intelligent alerting, log analysis, and secure API access through a modern web dashboard.
+## 📊 Evaluation <br/>
 
-### Key Highlights
+This project was built against the **CodeXray Intern Evaluation** criteria. Here's how it is: <br/>
 
-✅ **100% Assignment Completion** - All phases implemented plus bonus features  
-🚀 **Production-Ready** - Clean architecture with TypeScript, React, and Express  
-🔒 **Enterprise Security** - bcrypt hashing, session management, input validation  
-📊 **Real-Time Monitoring** - Live CPU/Memory metrics with configurable alerts  
-🎨 **Modern UI/UX** - Responsive dashboard with dark mode and data visualization  
-⚡ **Optimized Performance** - Efficient DSA implementations with O(1) lookups  
+| Phase | Requirement | Points | Status | Implementation | <br/>
+|-------|-------------|--------|--------|----------------| <br/>
+| **Phase 1** | Log Analyzer Utility | ✅ Complete | Hash maps for O(n) parsing, Top-K algorithm for frequent errors | <br/>
+| **Phase 2** | Security & Session Management | ✅ Complete | bcrypt password hashing, UUID session tokens, secure APIs | <br/>
+| **Phase 3** | Metrics & Alerting | ✅ Complete | Real-time CPU/Memory collection, threshold-based alerts, efficient storage | <br/>
+| **Phase 4** | Reporting API | ✅ Complete | `/api/summary` endpoint with comprehensive reports, token-secured | <br/>
+| **Bonus** | Web Dashboard ✅ Complete | React SPA with charts, real-time updates, theme support | <br/>
 
----
+### Phase-by-Phase Breakdown <br/>
 
-## 📊 Evaluation
+#### Phase 1: Log Analyzer <br/>
+- ✅ Parse log files with multiple format support <br/>
+- ✅ Count log levels (INFO, WARN, ERROR) using hash maps <br/>
+- ✅ Extract top 5 most frequent errors with efficient sorting <br/>
+- ✅ Clean, modular `LogAnalyzer` class with comprehensive comments <br/>
+- ✅ O(n) time complexity for parsing, O(m log m) for top-K extraction <br/>
 
-This project was built against the **CodeXray Intern Evaluation** criteria. Here's how it is:
+#### Phase 2: Security & Session Management <br/>
+- ✅ bcrypt password hashing with 10 salt rounds (industry standard) <br/>
+- ✅ UUID-based session tokens with 24-hour expiration <br/>
+- ✅ Hash map storage for O(1) session lookups <br/>
+- ✅ Complete API endpoints: `/register`, `/login`, `/validate-session`, `/logout` <br/>
+- ✅ Zod schema validation for all inputs <br/>
+- ✅ No plaintext passwords stored anywhere <br/>
 
-| Phase | Requirement | Points | Status | Implementation |
-|-------|-------------|--------|--------|----------------|
-| **Phase 1** | Log Analyzer Utility  | ✅ Complete | Hash maps for O(n) parsing, Top-K algorithm for frequent errors |
-| **Phase 2** | Security & Session Management  | ✅ Complete | bcrypt password hashing, UUID session tokens, secure APIs |
-| **Phase 3** | Metrics & Alerting | ✅ Complete | Real-time CPU/Memory collection, threshold-based alerts, efficient storage |
-| **Phase 4** | Reporting API | ✅ Complete | `/api/summary` endpoint with comprehensive reports, token-secured |
-| **Bonus** | Web Dashboard ✅ Complete | React SPA with charts, real-time updates, theme support |
+#### Phase 3: Metrics & Alerting <br/>
+- ✅ Real-time CPU and Memory collection using `systeminformation` library <br/>
+- ✅ Background service collecting metrics every 5 seconds <br/>
+- ✅ Configurable thresholds (default: CPU 60%/80%, Memory 70%/85%) <br/>
+- ✅ Automatic alert generation when thresholds breached <br/>
+- ✅ Circular buffer pattern for efficient memory management (max 1000 entries) <br/>
+- ✅ In-memory storage with automatic cleanup <br/>
 
-### Phase-by-Phase Breakdown
+#### Phase 4: Reporting API <br/>
+- ✅ `/api/summary` endpoint returns comprehensive reports <br/>
+- ✅ Total alerts count and breakdown by type (CPU/Memory) <br/>
+- ✅ Last 10 alert timestamps with values <br/>
+- ✅ Average CPU and Memory for last 10 readings <br/>
+- ✅ Token-based authentication on all endpoints <br/>
+- ✅ Proper error handling and validation <br/>
 
-#### Phase 1: Log Analyzer 
-- ✅ Parse log files with multiple format support
-- ✅ Count log levels (INFO, WARN, ERROR) using hash maps
-- ✅ Extract top 5 most frequent errors with efficient sorting
-- ✅ Clean, modular `LogAnalyzer` class with comprehensive comments
-- ✅ O(n) time complexity for parsing, O(m log m) for top-K extraction
+#### Bonus: Web Dashboard <br/>
+- ✅ Modern React SPA with TypeScript <br/>
+- ✅ Real-time metric visualizations using Recharts <br/>
+- ✅ Interactive charts showing CPU/Memory trends over time <br/>
+- ✅ Alert history with severity badges and timestamps <br/>
+- ✅ Configurable thresholds via settings UI <br/>
+- ✅ Dark mode support with theme persistence <br/>
+- ✅ Responsive design (mobile, tablet, desktop) <br/>
+- ✅ Professional UI using Shadcn components + Tailwind CSS <br/>
 
-#### Phase 2: Security & Session Management 
-- ✅ bcrypt password hashing with 10 salt rounds (industry standard)
-- ✅ UUID-based session tokens with 24-hour expiration
-- ✅ Hash map storage for O(1) session lookups
-- ✅ Complete API endpoints: `/register`, `/login`, `/validate-session`, `/logout`
-- ✅ Zod schema validation for all inputs
-- ✅ No plaintext passwords stored anywhere
+<hr/> <br/>
 
-#### Phase 3: Metrics & Alerting 
-- ✅ Real-time CPU and Memory collection using `systeminformation` library
-- ✅ Background service collecting metrics every 5 seconds
-- ✅ Configurable thresholds (default: CPU 60%/80%, Memory 70%/85%)
-- ✅ Automatic alert generation when thresholds breached
-- ✅ Circular buffer pattern for efficient memory management (max 1000 entries)
-- ✅ In-memory storage with automatic cleanup
+## ✨ Features and Core Functionality <br/>
 
-#### Phase 4: Reporting API 
-- ✅ `/api/summary` endpoint returns comprehensive reports
-- ✅ Total alerts count and breakdown by type (CPU/Memory)
-- ✅ Last 10 alert timestamps with values
-- ✅ Average CPU and Memory for last 10 readings
-- ✅ Token-based authentication on all endpoints
-- ✅ Proper error handling and validation
+#### 🔍 Log Analysis <br/>
+- Upload and parse log files (supports multiple formats) <br/>
+- Real-time log level counting (INFO, WARN, ERROR) <br/>
+- Identify top 5 most frequent errors <br/>
+- Hash map-based O(1) lookups for efficiency <br/>
 
-#### Bonus: Web Dashboard
-- ✅ Modern React SPA with TypeScript
-- ✅ Real-time metric visualizations using Recharts
-- ✅ Interactive charts showing CPU/Memory trends over time
-- ✅ Alert history with severity badges and timestamps
-- ✅ Configurable thresholds via settings UI
-- ✅ Dark mode support with theme persistence
-- ✅ Responsive design (mobile, tablet, desktop)
-- ✅ Professional UI using Shadcn components + Tailwind CSS
+#### 📈 System Monitoring <br/>
+- Real-time CPU usage tracking <br/>
+- Real-time Memory usage tracking <br/>
+- Automatic data collection every 5 seconds <br/>
+- Circular buffer for memory efficiency <br/>
+- Historical data retrieval (last 100+ readings) <br/>
 
----
+#### 🚨 Intelligent Alerting <br/>
+- Configurable warning and critical thresholds <br/>
+- Automatic alert generation on threshold breach <br/>
+- Alert history with timestamps <br/>
+- Alert acknowledgment system <br/>
+- Clear all alerts functionality <br/>
 
-## ✨ Features
+#### 🔐 Security & Authentication <br/>
+- bcrypt password hashing (10 rounds) <br/>
+- UUID session tokens <br/>
+- 24-hour session expiration <br/>
+- Token-based API authentication <br/>
+- Input validation with Zod schemas <br/>
+- No plaintext password storage <br/>
 
-### Core Functionality
+#### 📊 Reporting & Analytics <br/>
+- Comprehensive summary reports <br/>
+- Alert breakdown by type <br/>
+- Average metric calculations <br/>
+- Recent activity tracking <br/>
+- RESTful API design <br/>
 
-#### 🔍 Log Analysis
-- Upload and parse log files (supports multiple formats)
-- Real-time log level counting (INFO, WARN, ERROR)
-- Identify top 5 most frequent errors
-- Hash map-based O(1) lookups for efficiency
+#### 🎨 Modern Web Dashboard <br/>
+- Real-time metric visualization <br/>
+- Interactive line charts (Recharts) <br/>
+- Live-updating metric cards <br/>
+- Alert management interface <br/>
+- Threshold configuration UI <br/>
+- Dark/Light theme toggle <br/>
+- Responsive mobile design <br/>
+- Professional UI components <br/>
 
-#### 📈 System Monitoring
-- Real-time CPU usage tracking
-- Real-time Memory usage tracking
-- Automatic data collection every 5 seconds
-- Circular buffer for memory efficiency
-- Historical data retrieval (last 100+ readings)
+--- <br/>
 
-#### 🚨 Intelligent Alerting
-- Configurable warning and critical thresholds
-- Automatic alert generation on threshold breach
-- Alert history with timestamps
-- Alert acknowledgment system
-- Clear all alerts functionality
+## 🛠️ Tech Stack <br/>
 
-#### 🔐 Security & Authentication
-- bcrypt password hashing (10 rounds)
-- UUID session tokens
-- 24-hour session expiration
-- Token-based API authentication
-- Input validation with Zod schemas
-- No plaintext password storage
+### Frontend <br/>
+- **Framework**: React 18.3.1 with TypeScript 5.6.3 <br/>
+- **Routing**: Wouter (lightweight SPA routing) <br/>
+- **UI Components**: Shadcn UI + Radix UI primitives <br/>
+- **Styling**: Tailwind CSS 3.4.17 <br/>
+- **Data Fetching**: TanStack Query (React Query) <br/>
+- **Charts**: Recharts 2.15.2 <br/>
+- **Form Handling**: React Hook Form + Zod validation <br/>
+- **Animations**: Framer Motion <br/>
+- **Build Tool**: Vite 5.4.20 <br/>
 
-#### 📊 Reporting & Analytics
-- Comprehensive summary reports
-- Alert breakdown by type
-- Average metric calculations
-- Recent activity tracking
-- RESTful API design
+### Backend <br/>
+- **Framework**: Express.js 4.21.2 <br/>
+- **Runtime**: Node.js 20.x <br/>
+- **Language**: TypeScript 5.6.3 <br/>
+- **Password Hashing**: bcrypt 6.0.0 <br/>
+- **System Metrics**: systeminformation 5.27.11 <br/>
+- **File Upload**: Multer 2.0.2 <br/>
+- **Session Management**: Custom UUID-based tokens <br/>
+- **Validation**: Zod 3.24.2 <br/>
 
-#### 🎨 Modern Web Dashboard
-- Real-time metric visualization
-- Interactive line charts (Recharts)
-- Live-updating metric cards
-- Alert management interface
-- Threshold configuration UI
-- Dark/Light theme toggle
-- Responsive mobile design
-- Professional UI components
+### Development Tools <br/>
+- **Build**: esbuild, tsx <br/>
+- **Type Checking**: TypeScript compiler <br/>
+- **Dev Server**: Vite with HMR <br/>
+- **Package Manager**: npm <br/>
 
----
+--- <br/>
 
-## 🛠️ Tech Stack
+## 🚀 Installation & Setup <br/>
 
-### Frontend
-- **Framework**: React 18.3.1 with TypeScript 5.6.3
-- **Routing**: Wouter (lightweight SPA routing)
-- **UI Components**: Shadcn UI + Radix UI primitives
-- **Styling**: Tailwind CSS 3.4.17
-- **Data Fetching**: TanStack Query (React Query)
-- **Charts**: Recharts 2.15.2
-- **Form Handling**: React Hook Form + Zod validation
-- **Animations**: Framer Motion
-- **Build Tool**: Vite 5.4.20
+### Prerequisites <br/>
 
-### Backend
-- **Framework**: Express.js 4.21.2
-- **Runtime**: Node.js 20.x
-- **Language**: TypeScript 5.6.3
-- **Password Hashing**: bcrypt 6.0.0
-- **System Metrics**: systeminformation 5.27.11
-- **File Upload**: Multer 2.0.2
-- **Session Management**: Custom UUID-based tokens
-- **Validation**: Zod 3.24.2
+- **Node.js**: v20.x or higher <br/>
+- **npm**: v10.x or higher <br/>
+- **Operating System**: Linux, macOS, or Windows <br/>
 
-### Development Tools
-- **Build**: esbuild, tsx
-- **Type Checking**: TypeScript compiler
-- **Dev Server**: Vite with HMR
-- **Package Manager**: npm
+### Quick Start <br/>
 
----
-
-## 🚀 Installation & Setup
-
-### Prerequisites
-
-- **Node.js**: v20.x or higher
-- **npm**: v10.x or higher
-- **Operating System**: Linux, macOS, or Windows
-
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone "link"
+1. **Clone the repository** <br/>
+   ```bash 
+   git clone "link" 
    cd codexray
-   ```
+   ``` <br/>
 
-2. **Install dependencies**
+2. **Install dependencies** <br/>
    ```bash
    npm install
-   ```
+   ``` <br/>
 
-3. **Set up environment variables**
+3. **Set up environment variables** <br/>
    ```bash
    # Create .env file (optional - defaults will work)
    echo "SESSION_SECRET=your-secret-key-here" > .env
    echo "NODE_ENV=development" >> .env
    echo "PORT=5000" >> .env
-   ```
+   ``` <br/>
 
-4. **Start the development server**
+4. **Start the development server** <br/>
    ```bash
    npm run dev
-   ```
+   ``` <br/>
 
-5. **Open your browser**
+5. **Open your browser** <br/>
    ```
    Navigate to: http://localhost:5000
-   ```
+   ``` <br/>
 
-### Available Scripts
+### Available Scripts <br/>
 
-```bash
+```bash 
 # Development mode (recommended)
 npm run dev              # Starts server with hot-reload on port 5000
 
@@ -244,50 +229,50 @@ npm start                # Start production server
 npm run check            # Run TypeScript type checker
 ```
 
----
+--- <br/>
 
-## 📖 Usage
+## 📖 Usage <br/>
 
-### Getting Started
+### Getting Started <br/>
 
-1. **Register an Account**
-   - Navigate to http://localhost:5000
-   - Click "Register" on the login page
-   - Enter username and password (min 8 characters)
-   - You'll be automatically logged in
+1. **Register an Account** <br/>
+   - Navigate to http://localhost:5000 <br/>
+   - Click "Register" on the login page <br/>
+   - Enter username and password (min 8 characters) <br/>
+   - You'll be automatically logged in <br/>
 
-2. **Explore the Dashboard**
-   - **Dashboard**: Overview of CPU and Memory metrics
-   - **Metrics**: Detailed charts and historical data
-   - **Alerts**: View and manage system alerts
-   - **Logs**: Upload log files for analysis
-   - **Settings**: Configure alert thresholds
+2. **Explore the Dashboard** <br/>
+   - **Dashboard**: Overview of CPU and Memory metrics <br/>
+   - **Metrics**: Detailed charts and historical data <br/>
+   - **Alerts**: View and manage system alerts <br/>
+   - **Logs**: Upload log files for analysis <br/>
+   - **Settings**: Configure alert thresholds <br/>
 
-3. **Upload Log Files**
-   - Navigate to the "Logs" page
-   - Click "Upload Log File"
-   - Select a .log or .txt file
-   - View analysis results (counts, top errors)
+3. **Upload Log Files** <br/>
+   - Navigate to the "Logs" page <br/>
+   - Click "Upload Log File" <br/>
+   - Select a .log or .txt file <br/>
+   - View analysis results (counts, top errors) <br/>
 
-4. **Configure Thresholds**
-   - Go to "Settings" page
-   - Adjust warning and critical thresholds
-   - Changes apply immediately
-   - System generates alerts based on new values
+4. **Configure Thresholds** <br/>
+   - Go to "Settings" page <br/>
+   - Adjust warning and critical thresholds <br/>
+   - Changes apply immediately <br/>
+   - System generates alerts based on new values <br/>
 
----
+--- <br/>
 
-## 📡 API Documentation
+## 📡 API Documentation <br/>
 
-All endpoints require authentication (except `/register` and `/login`). Include the session token in the Authorization header:
+All endpoints require authentication (except `/register` and `/login`). Include the session token in the Authorization header: <br/>
 
 ```
 Authorization: Bearer <your-session-token>
-```
+``` <br/>
 
-### Authentication Endpoints
+### Authentication Endpoints <br/>
 
-#### Register User
+#### Register User <br/>
 ```http
 POST /api/register
 Content-Type: application/json
@@ -302,9 +287,9 @@ Response:
   "token": "uuid-session-token",
   "username": "john_doe"
 }
-```
+``` <br/> 
 
-#### Login
+#### Login <br/>
 ```http
 POST /api/login
 Content-Type: application/json
@@ -319,9 +304,9 @@ Response:
   "token": "uuid-session-token",
   "username": "john_doe"
 }
-```
+``` <br/>
 
-#### Validate Session
+#### Validate Session <br/>
 ```http
 POST /api/validate-session
 Authorization: Bearer <token>
@@ -331,9 +316,9 @@ Response:
   "valid": true,
   "username": "john_doe"
 }
-```
+``` <br/>
 
-#### Logout
+#### Logout <br/>
 ```http
 POST /api/logout
 Authorization: Bearer <token>
@@ -342,11 +327,11 @@ Response:
 {
   "success": true
 }
-```
+``` <br/>
 
-### Metrics Endpoints
+### Metrics Endpoints <br/>
 
-#### Get Current Metrics
+#### Get Current Metrics <br/>
 ```http
 GET /api/metrics/current
 Authorization: Bearer <token>
@@ -358,9 +343,9 @@ Response:
   "cpuTrend": 2.3,
   "memoryTrend": -1.2
 }
-```
+``` <br/>
 
-#### Get Metrics History
+#### Get Metrics History <br/>
 ```http
 GET /api/metrics/history
 Authorization: Bearer <token>
@@ -375,11 +360,11 @@ Response:
   },
   ...
 ]
-```
+``` <br/>
 
-### Alert Endpoints
+### Alert Endpoints <br/>
 
-#### Get All Alerts
+#### Get All Alerts <br/>
 ```http
 GET /api/alerts
 Authorization: Bearer <token>
@@ -398,9 +383,9 @@ Response:
   },
   ...
 ]
-```
+``` <br/>
 
-#### Acknowledge Alert
+#### Acknowledge Alert <br/>
 ```http
 POST /api/alerts/:id/acknowledge
 Authorization: Bearer <token>
@@ -409,9 +394,9 @@ Response:
 {
   "success": true
 }
-```
+``` <br/>
 
-#### Clear All Alerts
+#### Clear All Alerts <br/>
 ```http
 DELETE /api/alerts/clear
 Authorization: Bearer <token>
@@ -420,11 +405,11 @@ Response:
 {
   "success": true
 }
-```
+``` <br/>
 
-### Threshold Configuration
+### Threshold Configuration <br/>
 
-#### Get Thresholds
+#### Get Thresholds <br/>
 ```http
 GET /api/thresholds
 Authorization: Bearer <token>
@@ -446,9 +431,9 @@ Response:
     "updatedAt": "2025-10-25T08:15:30.000Z"
   }
 ]
-```
+``` <br/>
 
-#### Update Threshold
+#### Update Threshold <br/>
 ```http
 PUT /api/thresholds/CPU
 Authorization: Bearer <token>
@@ -467,11 +452,11 @@ Response:
   "criticalThreshold": 85,
   "updatedAt": "2025-10-25T08:20:00.000Z"
 }
-```
+``` <br/>
 
-### Log Analysis
+### Log Analysis <br/>
 
-#### Analyze Log File
+#### Analyze Log File <br/>
 ```http
 POST /api/logs/analyze
 Authorization: Bearer <token>
@@ -500,11 +485,11 @@ Response:
     ...
   ]
 }
-```
+``` <br/>
 
-### Summary Report
+### Summary Report <br/>
 
-#### Get Summary Report
+#### Get Summary Report <br/>
 ```http
 GET /api/summary
 Authorization: Bearer <token>
@@ -530,34 +515,34 @@ Response:
   },
   "generatedAt": "2025-10-25T08:20:00.000Z"
 }
-```
+``` <br/>
 
----
+--- <br/>
 
-## 🧠 Data Structures & Algorithms
+## 🧠 Data Structures & Algorithms <br/>
 
-This project demonstrates practical application of DSA concepts for optimal performance.
+This project demonstrates practical application of DSA concepts for optimal performance. <br/>
 
-### 1. Hash Maps (O(1) Operations)
+### 1. Hash Maps (O(1) Operations) <br/>
 
-**Location**: `server/storage.ts`
+**Location**: `server/storage.ts` <br/>
 
 ```typescript
 private users: Map<string, User>;
 private sessions: Map<string, Session>;
 private alerts: Map<string, Alert>;
 private thresholds: Map<string, ThresholdConfig>;
-```
+``` <br/>
 
-**Benefits**:
-- O(1) average time for user lookups by ID
-- O(1) session validation
-- O(1) alert retrieval
-- Efficient key-value storage
+**Benefits**: <br/>
+- O(1) average time for user lookups by ID <br/>
+- O(1) session validation <br/>
+- O(1) alert retrieval <br/>
+- Efficient key-value storage <br/>
 
-### 2. Top-K Algorithm (Most Frequent Errors)
+### 2. Top-K Algorithm (Most Frequent Errors) <br/>
 
-**Location**: `server/services/log-analyzer.ts`
+**Location**: `server/services/log-analyzer.ts` <br/>
 
 ```typescript
 // Hash map for frequency counting
@@ -576,13 +561,13 @@ const topErrors = Array.from(errorFrequency.entries())
   .map(([message, count]) => ({ message, count }))
   .sort((a, b) => b.count - a.count)
   .slice(0, 5);
-```
+``` <br/>
 
-**Complexity**: O(n + m log m) where n = total lines, m = unique errors
+**Complexity**: O(n + m log m) where n = total lines, m = unique errors <br/>
 
-### 3. Circular Buffer Pattern
+### 3. Circular Buffer Pattern <br/>
 
-**Location**: `server/storage.ts`
+**Location**: `server/storage.ts` <br/>
 
 ```typescript
 async createMetric(metric: InsertMetric): Promise<Metric> {
@@ -597,42 +582,42 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
   
   return metric;
 }
-```
+``` <br/>
 
-**Benefits**:
-- Prevents memory leaks
-- FIFO data cleanup
-- Constant memory footprint
-- Automatic old data removal
+**Benefits**: <br/>
+- Prevents memory leaks <br/>
+- FIFO data cleanup <br/>
+- Constant memory footprint <br/>
+- Automatic old data removal <br/>
 
-### 4. Time-based Sorting
+### 4. Time-based Sorting <br/>
 
-**Location**: Multiple files
+**Location**: Multiple files <br/>
 
 ```typescript
 // Sort by timestamp (descending)
 .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
-```
+``` <br/>
 
-**Complexity**: O(n log n) using JavaScript's built-in merge sort
+**Complexity**: O(n log n) using JavaScript's built-in merge sort <br/>
 
-### Performance Summary
+### Performance Summary <br/>
 
-| Operation | Data Structure | Time Complexity | Space Complexity |
-|-----------|---------------|-----------------|------------------|
-| User lookup | Hash Map | O(1) | O(n) |
-| Session validation | Hash Map | O(1) | O(n) |
-| Alert retrieval | Hash Map | O(1) | O(n) |
-| Log level counting | Object | O(n) | O(1) |
-| Top-K errors | Map + Sort | O(n + m log m) | O(m) |
-| Metrics cleanup | Sort + Slice | O(n log n) | O(n) |
-| Get latest metrics | Filter + Sort | O(n log n) | O(n) |
+| Operation | Data Structure | Time Complexity | Space Complexity | <br/>
+|-----------|---------------|-----------------|------------------| <br/>
+| User lookup | Hash Map | O(1) | O(n) | <br/>
+| Session validation | Hash Map | O(1) | O(n) | <br/>
+| Alert retrieval | Hash Map | O(1) | O(n) | <br/>
+| Log level counting | Object | O(n) | O(1) | <br/>
+| Top-K errors | Map + Sort | O(n + m log m) | O(m) | <br/>
+| Metrics cleanup | Sort + Slice | O(n log n) | O(n) | <br/>
+| Get latest metrics | Filter + Sort | O(n log n) | O(n) | <br/>
 
----
+--- <br/>
 
-## 🏗️ Architecture
+## 🏗️ Architecture <br/>
 
-### System Design
+### System Design <br/>
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -676,72 +661,72 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 └──────────────────────────────────────────────────────────────┘
 ```
 
-### Data Flow
+### Data Flow <br/>
 
-1. **Metrics Collection Flow**
+1. **Metrics Collection Flow** <br/>
    ```
    OS → systeminformation → MetricsCollector → Storage → API → Dashboard
-   ```
+   ``` <br/>
 
-2. **Alert Generation Flow**
+2. **Alert Generation Flow** <br/>
    ```
    Metric → Threshold Check → Alert Creation → Storage → Notification
-   ```
+   ``` <br/>
 
-3. **Authentication Flow**
+3. **Authentication Flow** <br/>
    ```
    Credentials → bcrypt hash → Session Token → Storage → Client
-   ```
+   ``` <br/>
 
----
+--- <br/>
 
-## 🔒 Security Features
+## 🔒 Security Features <br/>
 
-### Password Security
-- **bcrypt hashing** with 10 salt rounds
-- No plaintext password storage
-- Secure password comparison using timing-safe algorithms
+### Password Security <br/>
+- **bcrypt hashing** with 10 salt rounds <br/>
+- No plaintext password storage <br/>
+- Secure password comparison using timing-safe algorithms <br/>
 
-### Session Management
-- **UUID-based tokens** for unpredictability
-- 24-hour automatic expiration
-- Token stored in hash map for O(1) validation
-- Automatic cleanup of expired sessions
+### Session Management <br/>
+- **UUID-based tokens** for unpredictability <br/>
+- 24-hour automatic expiration <br/>
+- Token stored in hash map for O(1) validation <br/>
+- Automatic cleanup of expired sessions <br/>
 
-### API Security
-- Token-based authentication on all protected endpoints
-- Zod schema validation for all inputs
-- Input sanitization to prevent injection attacks
-- Proper error messages (no sensitive info leakage)
+### API Security <br/>
+- Token-based authentication on all protected endpoints <br/>
+- Zod schema validation for all inputs <br/>
+- Input sanitization to prevent injection attacks <br/>
+- Proper error messages (no sensitive info leakage) <br/>
 
-### Best Practices
-- HTTPS recommended for production
-- CORS configuration for API security
-- Rate limiting ready (can be added)
-- Environment variable usage for secrets
+### Best Practices <br/>
+- HTTPS recommended for production <br/>
+- CORS configuration for API security <br/>
+- Rate limiting ready (can be added) <br/>
+- Environment variable usage for secrets <br/>
 
----
+--- <br/>
 
-## 📸 Screenshots
+## 📸 Screenshots <br/>
 
-### Login Page
-Clean, professional authentication interface with CodeXray branding.
+### Login Page <br/>
+Clean, professional authentication interface with CodeXray branding. <br/>
 
-### Dashboard
-Real-time CPU and Memory metrics with live trend indicators.
+### Dashboard <br/>
+Real-time CPU and Memory metrics with live trend indicators. <br/>
 
-### Metrics Page
-Interactive charts showing historical data with Recharts visualization.
+### Metrics Page <br/>
+Interactive charts showing historical data with Recharts visualization. <br/>
 
-### Alerts Page
-Comprehensive alert management with severity badges and timestamps.
+### Alerts Page <br/>
+Comprehensive alert management with severity badges and timestamps. <br/>
 
-### Settings Page
-Configurable threshold interface with real-time preview.
+### Settings Page <br/>
+Configurable threshold interface with real-time preview. <br/>
 
----
+--- <br/>
 
-## 📁 Project Structure
+## 📁 Project Structure <br/>
 
 ```
 SecureMicroAnalyzer/
@@ -798,47 +783,46 @@ SecureMicroAnalyzer/
 ├── tsconfig.json              # TypeScript configuration
 ├── vite.config.ts             # Vite build configuration
 └── README.md                  # This file
+``` <br/>
+
+--- <br/>
+
+## 🤝 Contributing <br/>
+
+Contributions are welcome! Please follow these guidelines: <br/>
+
+1. **Fork the repository** <br/>
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`) <br/>
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`) <br/>
+4. **Push to the branch** (`git push origin feature/amazing-feature`) <br/>
+5. **Open a Pull Request** <br/>
+
+### Development Guidelines <br/>
+
+- Follow TypeScript best practices <br/>
+- Write clean, modular, and commented code <br/>
+- Use Zod schemas for all data validation <br/>
+- Add tests for new features (when test framework is added) <br/>
+- Update documentation for API changes <br/>
+- Follow the existing code style <br/>
+
+--- <br/>
+
+## 🙏 Acknowledgments <br/>
+
+- **CodeXray Intern Evaluation Project** - Original assignment and requirements <br/>
+- **Shadcn UI** - Beautiful and accessible UI components <br/>
+- **Recharts** - Powerful charting library for React <br/>
+- **systeminformation** - Comprehensive system metrics library <br/>
+- **Replit** - Development and hosting platform <br/>
+
+--- <br/>
+
+<div align="center"> <br/>
+
+**Built with ❤️ using TypeScript, React, and Express by Umesh L** <br/>
+
+Made for the CodeXray Intern Evaluation Project <br/>
+
+</div> <br/>
 ```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
-4. **Push to the branch** (`git push origin feature/amazing-feature`)
-5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow TypeScript best practices
-- Write clean, modular, and commented code
-- Use Zod schemas for all data validation
-- Add tests for new features (when test framework is added)
-- Update documentation for API changes
-- Follow the existing code style
-
----
-
-## 🙏 Acknowledgments
-
-- **CodeXray Intern Evaluation Project** - Original assignment and requirements
-- **Shadcn UI** - Beautiful and accessible UI components
-- **Recharts** - Powerful charting library for React
-- **systeminformation** - Comprehensive system metrics library
-- **Replit** - Development and hosting platform
-
----
-
-<div align="center">
-
-**Built with ❤️ using TypeScript, React, and Express by Umesh L**
-
-Made for the CodeXray Intern Evaluation Project
-
-</div>
-#   U m e s h - L - C o d e X R a y - - - O b s e r v a b i l i t y - a n d - S e c u r i t y - m i c r o s e r v i c e  
- 
