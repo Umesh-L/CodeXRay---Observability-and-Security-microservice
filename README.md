@@ -709,20 +709,29 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 
 ## 📸 Screenshots <br/>
 
-### Login Page <br/>
+### Register/Login Page <br/>
 Clean, professional authentication interface with CodeXray branding. <br/>
+<img width="1919" height="882" alt="Register-Login page" src="https://github.com/user-attachments/assets/ccb0e2f8-031d-4315-9e6d-59bd64d53006" />
 
 ### Dashboard <br/>
-Real-time CPU and Memory metrics with live trend indicators. <br/>
+al-time CPU and Memory metrics with live trend indicators. <br/>
+Re<img width="1919" height="881" alt="Dashbooard" src="https://github.com/user-attachments/assets/015e3220-9ee9-4aa6-86e9-6bb8ff8f346e" />
 
 ### Metrics Page <br/>
 Interactive charts showing historical data with Recharts visualization. <br/>
+<img width="1919" height="870" alt="Metrics" src="https://github.com/user-attachments/assets/08130a67-bf0e-4f5b-9785-b96f985f5fb5" />
 
 ### Alerts Page <br/>
 Comprehensive alert management with severity badges and timestamps. <br/>
+<img width="1919" height="864" alt="Alerts" src="https://github.com/user-attachments/assets/1d8410fc-b646-44ac-b25b-40d93cfe1722" />
+
+### Log Analyzer Page <br/>
+Uploading the log file for analysis. <br/>
+<img width="1919" height="869" alt="Log Analyzer" src="https://github.com/user-attachments/assets/a2cf6853-7d1a-457a-b7a1-da3854912fc8" />
 
 ### Settings Page <br/>
 Configurable threshold interface with real-time preview. <br/>
+<img width="1919" height="861" alt="Settings" src="https://github.com/user-attachments/assets/1e22258a-9015-480c-b514-91950e86dcdf" />
 
 --- <br/>
 
