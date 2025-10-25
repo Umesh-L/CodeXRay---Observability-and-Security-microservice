@@ -94,6 +94,10 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
 
 <hr/> <br/>
 
+## 🎥 Screen Recording <br/>
+https://github.com/user-attachments/assets/b4f9f354-53a2-4059-8ecd-62f577070da5
+<hr/> <br/>
+
 ## ✨ Features and Core Functionality <br/>
 
 #### 🔍 Log Analysis <br/>
