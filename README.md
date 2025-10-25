@@ -174,6 +174,13 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
 
 <hr/> 
 
+## 🧑‍💻 Shortcut for running the project <br/>
+- Register and SignIn to Replit [Online code editor]. <br/>
+- Download the project zip file from my github repository. <br/>
+- Attach the zip file and pass the prompt telling "unzip and execute the project" to replit ai. <br/>
+- Or Fork the repository to your github account and import that project to the Replit and execute. <br/>
+- The project will be executed in the Replit's domain. <br/>
+
 ## 🚀 Installation & Setup <br/>
 
 ### Prerequisites <br/>
