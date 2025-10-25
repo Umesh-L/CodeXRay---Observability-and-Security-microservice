@@ -181,6 +181,8 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
 - Or Fork the repository to your github account and import that project to the Replit and execute. <br/>
 - The project will be executed in the Replit's domain. <br/>
 
+<hr/>
+
 ## 🚀 Installation & Setup <br/>
 
 ### Prerequisites <br/>
