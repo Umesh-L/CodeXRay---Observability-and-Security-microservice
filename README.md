@@ -653,31 +653,31 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 
 ```
 ┌─────────────────────────────────────────────────────────────┐ 
-│                         Client Browser                       │ 
-│                                                              │ 
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │ 
-│  │  Dashboard   │  │   Alerts     │  │   Settings   │      │ 
-│  └──────────────┘  └──────────────┘  └──────────────┘      │ 
-│                                                              │ 
-│              React 18 + TypeScript + Vite                    │ 
-└───────────────────────────┬──────────────────────────────────┘ 
+│                         Client Browser                      │ 
+│                                                             │ 
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │ 
+│  │  Dashboard   │  │   Alerts     │  │   Settings   │       │ 
+│  └──────────────┘  └──────────────┘  └──────────────┘       │ 
+│                                                             │ 
+│              React 18 + TypeScript + Vite                   │ 
+└───────────────────────────┬─────────────────────────────────┘ 
                             │ REST API (JSON) 
                             │ WebSocket (future) 
 ┌───────────────────────────▼──────────────────────────────────┐ 
-│                      Express.js Server                        │ 
+│                      Express.js Server                       │ 
 │                                                              │ 
-│  ┌──────────────────────────────────────────────────────┐   │ 
-│  │              Route Handlers                          │   │ 
-│  │  /api/register  /api/login  /api/metrics            │   │ 
-│  └──────────────────────────────────────────────────────┘   │ 
+│  ┌──────────────────────────────────────────────────────┐    │ 
+│  │              Route Handlers                          │    │ 
+│  │  /api/register  /api/login  /api/metrics             │    │ 
+│  └──────────────────────────────────────────────────────┘    │ 
 │                            │                                 │ 
-│  ┌─────────────────┬───────┴────────┬────────────────────┐  │ 
-│  │   Middleware    │   Services     │    Storage         │  │ 
-│  │                 │                │                    │  │ 
-│  │  - Auth Token   │  - Metrics     │  - In-Memory Maps  │  │ 
-│  │  - Validation   │  - Log Analyze │  - Circular Buffer │  │ 
-│  │  - Error Handle │  - Alerts      │  - Session Store   │  │ 
-│  └─────────────────┴────────────────┴────────────────────┘  │ 
+│  ┌─────────────────┬───────┴────────┬────────────────────┐   │ 
+│  │   Middleware    │   Services     │    Storage         │   │ 
+│  │                 │                │                    │   │ 
+│  │  - Auth Token   │  - Metrics     │  - In-Memory Maps  │   │ 
+│  │  - Validation   │  - Log Analyze │  - Circular Buffer │   │ 
+│  │  - Error Handle │  - Alerts      │  - Session Store   │   │ 
+│  └─────────────────┴────────────────┴────────────────────┘   │ 
 │                                                              │  
 │                  Node.js 20 + TypeScript                     │ 
 └───────────────────────────┬──────────────────────────────────┘ 
@@ -698,17 +698,20 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 1. **Metrics Collection Flow** <br/>
    ```
    OS → systeminformation → MetricsCollector → Storage → API → Dashboard
-   ``` <br/>
+   ``` 
+   <br/>
 
 2. **Alert Generation Flow** <br/>
    ```
    Metric → Threshold Check → Alert Creation → Storage → Notification
-   ``` <br/>
+   ``` 
+   <br/>
 
 3. **Authentication Flow** <br/>
    ```
    Credentials → bcrypt hash → Session Token → Storage → Client
-   ``` <br/>
+   ``` 
+   <br/>
 
 <hr/>
 
