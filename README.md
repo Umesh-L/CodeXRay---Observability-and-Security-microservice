@@ -141,7 +141,7 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
 - Responsive mobile design <br/>
 - Professional UI components <br/>
 
---- <br/>
+<hr/>
 
 ## 🛠️ Tech Stack <br/>
 
@@ -172,7 +172,7 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
 - **Dev Server**: Vite with HMR <br/>
 - **Package Manager**: npm <br/>
 
---- <br/>
+<hr/> 
 
 ## 🚀 Installation & Setup <br/>
 
@@ -188,12 +188,14 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
    ```bash 
    git clone "link" 
    cd codexray
-   ``` <br/>
+   ``` 
+   <br/>
 
 2. **Install dependencies** <br/>
    ```bash
    npm install
-   ``` <br/>
+   ``` 
+   <br/>
 
 3. **Set up environment variables** <br/>
    ```bash
@@ -201,17 +203,20 @@ This project was built against the **CodeXray Intern Evaluation** criteria. Here
    echo "SESSION_SECRET=your-secret-key-here" > .env
    echo "NODE_ENV=development" >> .env
    echo "PORT=5000" >> .env
-   ``` <br/>
+   ``` 
+   <br/>
 
 4. **Start the development server** <br/>
    ```bash
    npm run dev
-   ``` <br/>
+   ``` 
+   <br/>
 
 5. **Open your browser** <br/>
    ```
    Navigate to: http://localhost:5000
-   ``` <br/>
+   ``` 
+   <br/>
 
 ### Available Scripts <br/>
 
@@ -229,7 +234,7 @@ npm start                # Start production server
 npm run check            # Run TypeScript type checker
 ```
 
---- <br/>
+<hr/>
 
 ## 📖 Usage <br/>
 
@@ -260,7 +265,7 @@ npm run check            # Run TypeScript type checker
    - Changes apply immediately <br/>
    - System generates alerts based on new values <br/>
 
---- <br/>
+<hr/>
 
 ## 📡 API Documentation <br/>
 
@@ -268,7 +273,8 @@ All endpoints require authentication (except `/register` and `/login`). Include 
 
 ```
 Authorization: Bearer <your-session-token>
-``` <br/>
+```
+ <br/>
 
 ### Authentication Endpoints <br/>
 
@@ -287,7 +293,8 @@ Response:
   "token": "uuid-session-token",
   "username": "john_doe"
 }
-``` <br/> 
+```
+ <br/>
 
 #### Login <br/>
 ```http
@@ -304,7 +311,8 @@ Response:
   "token": "uuid-session-token",
   "username": "john_doe"
 }
-``` <br/>
+```
+ <br/>
 
 #### Validate Session <br/>
 ```http
@@ -316,7 +324,8 @@ Response:
   "valid": true,
   "username": "john_doe"
 }
-``` <br/>
+```
+ <br/> 
 
 #### Logout <br/>
 ```http
@@ -327,7 +336,8 @@ Response:
 {
   "success": true
 }
-``` <br/>
+```
+ <br/>
 
 ### Metrics Endpoints <br/>
 
@@ -343,7 +353,8 @@ Response:
   "cpuTrend": 2.3,
   "memoryTrend": -1.2
 }
-``` <br/>
+```
+ <br/>
 
 #### Get Metrics History <br/>
 ```http
@@ -360,7 +371,8 @@ Response:
   },
   ...
 ]
-``` <br/>
+```
+<br/>
 
 ### Alert Endpoints <br/>
 
@@ -383,7 +395,8 @@ Response:
   },
   ...
 ]
-``` <br/>
+``` 
+<br/>
 
 #### Acknowledge Alert <br/>
 ```http
@@ -394,7 +407,8 @@ Response:
 {
   "success": true
 }
-``` <br/>
+``` 
+<br/>
 
 #### Clear All Alerts <br/>
 ```http
@@ -405,7 +419,8 @@ Response:
 {
   "success": true
 }
-``` <br/>
+``` 
+<br/>
 
 ### Threshold Configuration <br/>
 
@@ -431,7 +446,8 @@ Response:
     "updatedAt": "2025-10-25T08:15:30.000Z"
   }
 ]
-``` <br/>
+``` 
+<br/>
 
 #### Update Threshold <br/>
 ```http
@@ -452,7 +468,8 @@ Response:
   "criticalThreshold": 85,
   "updatedAt": "2025-10-25T08:20:00.000Z"
 }
-``` <br/>
+``` 
+<br/>
 
 ### Log Analysis <br/>
 
@@ -485,7 +502,8 @@ Response:
     ...
   ]
 }
-``` <br/>
+``` 
+<br/>
 
 ### Summary Report <br/>
 
@@ -515,9 +533,10 @@ Response:
   },
   "generatedAt": "2025-10-25T08:20:00.000Z"
 }
-``` <br/>
+``` 
+<br/>
 
---- <br/>
+<hr/>
 
 ## 🧠 Data Structures & Algorithms <br/>
 
@@ -532,7 +551,8 @@ private users: Map<string, User>;
 private sessions: Map<string, Session>;
 private alerts: Map<string, Alert>;
 private thresholds: Map<string, ThresholdConfig>;
-``` <br/>
+``` 
+<br/>
 
 **Benefits**: <br/>
 - O(1) average time for user lookups by ID <br/>
@@ -561,7 +581,8 @@ const topErrors = Array.from(errorFrequency.entries())
   .map(([message, count]) => ({ message, count }))
   .sort((a, b) => b.count - a.count)
   .slice(0, 5);
-``` <br/>
+``` 
+<br/>
 
 **Complexity**: O(n + m log m) where n = total lines, m = unique errors <br/>
 
@@ -582,7 +603,8 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
   
   return metric;
 }
-``` <br/>
+``` 
+<br/>
 
 **Benefits**: <br/>
 - Prevents memory leaks <br/>
@@ -597,7 +619,8 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 ```typescript
 // Sort by timestamp (descending)
 .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
-``` <br/>
+``` 
+<br/>
 
 **Complexity**: O(n log n) using JavaScript's built-in merge sort <br/>
 
@@ -613,7 +636,7 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 | Metrics cleanup | Sort + Slice | O(n log n) | O(n) | <br/>
 | Get latest metrics | Filter + Sort | O(n log n) | O(n) | <br/>
 
---- <br/>
+<hr/>
 
 ## 🏗️ Architecture <br/>
 
@@ -678,7 +701,7 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
    Credentials → bcrypt hash → Session Token → Storage → Client
    ``` <br/>
 
---- <br/>
+<hr/>
 
 ## 🔒 Security Features <br/>
 
@@ -705,7 +728,7 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 - Rate limiting ready (can be added) <br/>
 - Environment variable usage for secrets <br/>
 
---- <br/>
+<hr/>
 
 ## 📸 Screenshots <br/>
 
@@ -713,17 +736,17 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 Clean, professional authentication interface with CodeXray branding. <br/>
 <img width="1919" height="882" alt="Register-Login page" src="https://github.com/user-attachments/assets/ccb0e2f8-031d-4315-9e6d-59bd64d53006" />
 
-### Dashboard <br/>
+### Dashboard Page <br/>
 al-time CPU and Memory metrics with live trend indicators. <br/>
 Re<img width="1919" height="881" alt="Dashbooard" src="https://github.com/user-attachments/assets/015e3220-9ee9-4aa6-86e9-6bb8ff8f346e" />
-
-### Metrics Page <br/>
-Interactive charts showing historical data with Recharts visualization. <br/>
-<img width="1919" height="870" alt="Metrics" src="https://github.com/user-attachments/assets/08130a67-bf0e-4f5b-9785-b96f985f5fb5" />
 
 ### Alerts Page <br/>
 Comprehensive alert management with severity badges and timestamps. <br/>
 <img width="1919" height="864" alt="Alerts" src="https://github.com/user-attachments/assets/1d8410fc-b646-44ac-b25b-40d93cfe1722" />
+
+### Metrics Page <br/>
+Interactive charts showing historical data with Recharts visualization. <br/>
+<img width="1919" height="870" alt="Metrics" src="https://github.com/user-attachments/assets/08130a67-bf0e-4f5b-9785-b96f985f5fb5" />
 
 ### Log Analyzer Page <br/>
 Uploading the log file for analysis. <br/>
@@ -733,7 +756,7 @@ Uploading the log file for analysis. <br/>
 Configurable threshold interface with real-time preview. <br/>
 <img width="1919" height="861" alt="Settings" src="https://github.com/user-attachments/assets/1e22258a-9015-480c-b514-91950e86dcdf" />
 
---- <br/>
+<hr/>
 
 ## 📁 Project Structure <br/>
 
@@ -792,9 +815,10 @@ SecureMicroAnalyzer/ <br/>
 ├── tsconfig.json              # TypeScript configuration <br/> 
 ├── vite.config.ts             # Vite build configuration <br/>
 └── README.md                  # This file <br/>
-``` <br/> 
+``` 
+<br/> 
 
---- <br/>
+<hr/>
 
 ## 🤝 Contributing <br/>
 
@@ -815,7 +839,7 @@ Contributions are welcome! Please follow these guidelines: <br/>
 - Update documentation for API changes <br/>
 - Follow the existing code style <br/>
 
---- <br/>
+<hr/>
 
 ## 🙏 Acknowledgments <br/>
 
@@ -825,7 +849,7 @@ Contributions are welcome! Please follow these guidelines: <br/>
 - **systeminformation** - Comprehensive system metrics library <br/>
 - **Replit** - Development and hosting platform <br/>
 
---- <br/>
+<hr/>
 
 <div align="center"> <br/>
 
