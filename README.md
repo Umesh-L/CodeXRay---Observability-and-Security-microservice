@@ -634,17 +634,17 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 **Complexity**: O(n log n) using JavaScript's built-in merge sort <br/>
 
 ### Performance Summary <br/>
-
-| Operation | Data Structure | Time Complexity | Space Complexity | <br/>
-|-----------|---------------|-----------------|------------------| <br/>
-| User lookup | Hash Map | O(1) | O(n) | <br/>
-| Session validation | Hash Map | O(1) | O(n) | <br/>
-| Alert retrieval | Hash Map | O(1) | O(n) | <br/>
-| Log level counting | Object | O(n) | O(1) | <br/>
-| Top-K errors | Map + Sort | O(n + m log m) | O(m) | <br/>
-| Metrics cleanup | Sort + Slice | O(n log n) | O(n) | <br/>
-| Get latest metrics | Filter + Sort | O(n log n) | O(n) | <br/>
-
+```
+| Operation | Data Structure | Time Complexity | Space Complexity | 
+|-----------|---------------|-----------------|------------------| 
+| User lookup | Hash Map | O(1) | O(n) | 
+| Session validation | Hash Map | O(1) | O(n) | 
+| Alert retrieval | Hash Map | O(1) | O(n) | 
+| Log level counting | Object | O(n) | O(1) | 
+| Top-K errors | Map + Sort | O(n + m log m) | O(m) | 
+| Metrics cleanup | Sort + Slice | O(n log n) | O(n) | 
+| Get latest metrics | Filter + Sort | O(n log n) | O(n) | 
+```
 <hr/>
 
 ## 🏗️ Architecture <br/>
@@ -652,45 +652,45 @@ async createMetric(metric: InsertMetric): Promise<Metric> {
 ### System Design <br/>
 
 ```
-┌─────────────────────────────────────────────────────────────┐ <br/>
-│                         Client Browser                       │ <br/>
-│                                                              │ <br/>
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │ <br/>
-│  │  Dashboard   │  │   Alerts     │  │   Settings   │      │ <br/>
-│  └──────────────┘  └──────────────┘  └──────────────┘      │ <br/>
-│                                                              │ <br/>
-│              React 18 + TypeScript + Vite                    │ <br/>
-└───────────────────────────┬──────────────────────────────────┘ <br/>
-                            │ REST API (JSON) <br/>
-                            │ WebSocket (future) <br/>
-┌───────────────────────────▼──────────────────────────────────┐ <br/>
-│                      Express.js Server                        │ <br/>
-│                                                              │ <br/>
-│  ┌──────────────────────────────────────────────────────┐   │ <br/>
-│  │              Route Handlers                          │   │ <br/>
-│  │  /api/register  /api/login  /api/metrics            │   │ <br/>
-│  └──────────────────────────────────────────────────────┘   │ <br/>
-│                            │                                 │ <br/>
-│  ┌─────────────────┬───────┴────────┬────────────────────┐  │ <br/>
-│  │   Middleware    │   Services     │    Storage         │  │ <br/>
-│  │                 │                │                    │  │ <br/>
-│  │  - Auth Token   │  - Metrics     │  - In-Memory Maps  │  │ <br/>
-│  │  - Validation   │  - Log Analyze │  - Circular Buffer │  │ <br/>
-│  │  - Error Handle │  - Alerts      │  - Session Store   │  │ <br/>
-│  └─────────────────┴────────────────┴────────────────────┘  │ <br/>
-│                                                              │ <br/> 
-│                  Node.js 20 + TypeScript                     │ <br/>
-└───────────────────────────┬──────────────────────────────────┘ <br/>
-                            │ <br/> 
-                            │ OS Metrics <br/>
-                            │ <br/>
-┌───────────────────────────▼──────────────────────────────────┐ <br/>
-│                    Operating System                          │ <br/>
-│                                                              │ <br/>
-│        CPU Usage    │    Memory Usage    │   System Info     │ <br/>
-│                                                              │ <br/>
-│              (systeminformation library)                     │ <br/>
-└──────────────────────────────────────────────────────────────┘ <br/>
+┌─────────────────────────────────────────────────────────────┐ 
+│                         Client Browser                       │ 
+│                                                              │ 
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │ 
+│  │  Dashboard   │  │   Alerts     │  │   Settings   │      │ 
+│  └──────────────┘  └──────────────┘  └──────────────┘      │ 
+│                                                              │ 
+│              React 18 + TypeScript + Vite                    │ 
+└───────────────────────────┬──────────────────────────────────┘ 
+                            │ REST API (JSON) 
+                            │ WebSocket (future) 
+┌───────────────────────────▼──────────────────────────────────┐ 
+│                      Express.js Server                        │ 
+│                                                              │ 
+│  ┌──────────────────────────────────────────────────────┐   │ 
+│  │              Route Handlers                          │   │ 
+│  │  /api/register  /api/login  /api/metrics            │   │ 
+│  └──────────────────────────────────────────────────────┘   │ 
+│                            │                                 │ 
+│  ┌─────────────────┬───────┴────────┬────────────────────┐  │ 
+│  │   Middleware    │   Services     │    Storage         │  │ 
+│  │                 │                │                    │  │ 
+│  │  - Auth Token   │  - Metrics     │  - In-Memory Maps  │  │ 
+│  │  - Validation   │  - Log Analyze │  - Circular Buffer │  │ 
+│  │  - Error Handle │  - Alerts      │  - Session Store   │  │ 
+│  └─────────────────┴────────────────┴────────────────────┘  │ 
+│                                                              │  
+│                  Node.js 20 + TypeScript                     │ 
+└───────────────────────────┬──────────────────────────────────┘ 
+                            │ 
+                            │ OS Metrics 
+                            │ 
+┌───────────────────────────▼──────────────────────────────────┐ 
+│                    Operating System                          │ 
+│                                                              │ 
+│        CPU Usage    │    Memory Usage    │   System Info     │
+│                                                              │ 
+│              (systeminformation library)                     │ 
+└──────────────────────────────────────────────────────────────┘ 
 ```
 
 ### Data Flow <br/>
@@ -771,59 +771,59 @@ Configurable threshold interface with real-time preview. <br/>
 
 ```
 SecureMicroAnalyzer/ <br/>
-├── client/                      # Frontend React application <br/>
-│   ├── public/ <br/>
-│   │    <br/>
-│   └── src/ <br/>
-│       ├── components/          # Reusable UI components <br/>
-│       │   ├── ui/             # Shadcn UI components (35+ components) <br/>
-│       │   ├── alert-card.tsx <br/>
-│       │   ├── app-sidebar.tsx <br/>
-│       │   ├── metric-card.tsx <br/>
-│       │   ├── metric-chart.tsx <br/> 
-│       │   └── protected-route.tsx <br/>
-│       ├── hooks/              # Custom React hooks <br/>
-│       │   ├── use-mobile.tsx <br/>
-│       │   └── use-toast.ts <br/>
-│       ├── lib/                # Utilities and helpers <br/>
-│       │   ├── auth.ts <br/>
-│       │   ├── queryClient.ts <br/>
-│       │   └── utils.ts <br/>
-│       ├── pages/              # Page components <br/>
-│       │   ├── dashboard.tsx <br/>
-│       │   ├── alerts.tsx <br/>
-│       │   ├── logs.tsx <br/>
-│       │   ├── metrics.tsx <br/>
-│       │   ├── settings.tsx <br/>
-│       │   ├── login.tsx <br/>
-│       │   └── register.tsx <br/>
-│       ├── App.tsx             # Main app with routing <br/>
-│       ├── index.css           # Global styles <br/>
-│       └── main.tsx            # React entry point <br/>
-│<br/>
-├── server/                      # Backend Express application <br/>
-│   ├── middleware/ <br/>
-│   │   └── auth.ts             # Authentication middleware <br/>
-│   ├── services/ <br/>
-│   │   ├── metrics-collector.ts # Background metrics service <br/>
-│   │   └── log-analyzer.ts      # Log parsing utility <br/>
-│   ├── index.ts                # Server entry point <br/> 
-│   ├── routes.ts               # API route definitions <br/>
-│   ├── storage.ts              # In-memory data storage <br/>
-│   └── vite.ts                 # Vite integration <br/>
-│ <br/>
-├── shared/                      # Shared between client and server <br/>
-│   └── schema.ts               # Zod schemas and TypeScript types <br/>
-│ <br/>
-├── components.json             # Shadcn UI configuration <br/>
-├── design_guidelines.md        # UI/UX design system <br/>
-├── drizzle.config.ts          # Database configuration (future) <br/>
-├── package.json               # Dependencies and scripts <br/>
-├── postcss.config.js          # PostCSS configuration <br/> 
-├── tailwind.config.ts         # Tailwind CSS configuration <br/> 
-├── tsconfig.json              # TypeScript configuration <br/> 
-├── vite.config.ts             # Vite build configuration <br/>
-└── README.md                  # This file <br/>
+├── client/                      # Frontend React application 
+│   ├── public/ 
+│   │    
+│   └── src/ 
+│       ├── components/          # Reusable UI components 
+│       │   ├── ui/             # Shadcn UI components (35+ components) 
+│       │   ├── alert-card.tsx 
+│       │   ├── app-sidebar.tsx 
+│       │   ├── metric-card.tsx 
+│       │   ├── metric-chart.tsx 
+│       │   └── protected-route.tsx 
+│       ├── hooks/              # Custom React hooks
+│       │   ├── use-mobile.tsx 
+│       │   └── use-toast.ts 
+│       ├── lib/                # Utilities and helpers 
+│       │   ├── auth.ts
+│       │   ├── queryClient.ts 
+│       │   └── utils.ts 
+│       ├── pages/              # Page components
+│       │   ├── dashboard.tsx 
+│       │   ├── alerts.tsx 
+│       │   ├── logs.tsx 
+│       │   ├── metrics.tsx 
+│       │   ├── settings.tsx 
+│       │   ├── login.tsx
+│       │   └── register.tsx 
+│       ├── App.tsx             # Main app with routing 
+│       ├── index.css           # Global styles 
+│       └── main.tsx            # React entry point 
+│
+├── server/                      # Backend Express application 
+│   ├── middleware/ 
+│   │   └── auth.ts             # Authentication middleware
+│   ├── services/ 
+│   │   ├── metrics-collector.ts # Background metrics service
+│   │   └── log-analyzer.ts      # Log parsing utility 
+│   ├── index.ts                # Server entry point 
+│   ├── routes.ts               # API route definitions 
+│   ├── storage.ts              # In-memory data storage 
+│   └── vite.ts                 # Vite integration 
+│ 
+├── shared/                      # Shared between client and server 
+│   └── schema.ts               # Zod schemas and TypeScript types 
+│ 
+├── components.json             # Shadcn UI configuration 
+├── design_guidelines.md        # UI/UX design system 
+├── drizzle.config.ts          # Database configuration (future)
+├── package.json               # Dependencies and scripts 
+├── postcss.config.js          # PostCSS configuration
+├── tailwind.config.ts         # Tailwind CSS configuration
+├── tsconfig.json              # TypeScript configuration 
+├── vite.config.ts             # Vite build configuration 
+└── README.md                  # This file 
 ``` 
 <br/> 
 
